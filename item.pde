@@ -82,19 +82,19 @@ void showRainbows2 () {
   image(rainbow,rainbow2_x,rainbow2_y,rainbow2_w,rainbow2_h);//虹アイテム2の画像の表示と位置と大きさ
 }
 
-float moon_x, moon_y ; //月の左上の座標
-float moon_w = 50, moon_h = 50;//月の幅と高さ
-float moon_dx,moon_dy; //月の移動速度
+float star_x, star_y ; //月の左上の座標
+float star_w = 50, star_h = 50;//月の幅と高さ
+float star_dx,star_dy; //月の移動速度
 
-void showMoons () {
-  image(moon,moon_x,moon_y,moon_w,moon_h);
+void showStars () {
+  image(star,star_x,star_y,star_w,star_h);
   }//月アイテムの画像の表示と位置と大きさ
 
-void initMoon() {
-  moon_x = 330;
-  moon_y = 350;
-  moon_dx = 0;
-  moon_dy = 0;
+void initStar() {
+  star_x = 330;
+  star_y = 350;
+  star_dx = 0;
+  star_dy = 0;
 }//月アイテムの位置と速度を初期化
 
 float shootingstar_x =width, shootingstar_y = 40; //流れ星の左上の座標

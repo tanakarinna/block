@@ -25,17 +25,23 @@ void keyPressed() {
   if (key == ENTER || key == RETURN) {//enterキーが押されたとき
     if (scene==1) {//スタート画面からゲーム画面に切り替える、ゲームの開始時間を定義する
       startTime = millis();
+      playBGM(rainTrack); // ゲーム画面のBGMを再生
       scene=2;
+      //pose_stop();
+      //rain_music();
     }
     if (scene==3) {//結果画面からスタート画面に切り替える
+      playBGM(poseTrack);
       scene=1;
+      //rain_stop();
+      //pose_music();
     }
     if(scene==4){//説明画面からスタート画面に切り替える
       scene=1;
     }
   }
   if(key == TAB){
-    if(scene==1){
+    if(scene==1){//スタート画面から説明画面に切り替える
       scene=4;
     }
   }
@@ -62,7 +68,9 @@ void checkAndShowRacket(float r_y) {
 
   if (thunder1Count>0) {
     if (isOverlap(b_x, b_y, b_w, b_h, thunder1_x, thunder1_y, thunder1_w, thunder1_h)) {
-      racketLife = racketLife-1;      
+      racketLife = racketLife-1;   
+      thunder1Count = thunder1Count-1;
+      playDamageEffect();
     }
   }
   if (thunder2Count>0) {
@@ -100,9 +108,9 @@ void checkAndShowRacket(float r_y) {
 月に当たったらランダムで一つのブロックの耐久値を1減らす
 */
 
-  if (moonCount>0) {
-    if (isOverlap(b_x, b_y, b_w, b_h, moon_x, moon_y, moon_w, moon_h)) {
-      moonCount = moonCount - 1;
+  if (starCount>0) {
+    if (isOverlap(b_x, b_y, b_w, b_h, star_x, star_y, star_w, star_h)) {
+      starCount = starCount - 1;
       //image(shootingstar, shootingstar_x, shootingstar_y, shootingstar_w, shootingstar_h);
       //shootingstar_x -= shootingstar_dx;
       //shootingstar_y += shootingstar_dy;

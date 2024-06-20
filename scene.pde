@@ -5,8 +5,11 @@ void game_scene() {
   thunder4Count = 0;//サンダーの命
   rainbow1Count = 0;//虹の命
   rainbow2Count = 0;//虹の命
-  moonCount = 0;//月の命
+  starCount = 0;//月の命
 
+  //if (currentTrack != rainTrack) {
+  //  playTrack(rainTrack);
+  //}
 
   gameTime = millis() - startTime;//ゲームがスタートしてからの時間
   limitTime = 30000 - gameTime;//30秒の制限時間
@@ -66,8 +69,8 @@ void game_scene() {
   }
 
   if (gameTime % 5000 >= 0 && gameTime % 5000 < 1000) {
-    moonCount = 1;
-    showMoons ();//命が残っている月アイテムを表示する
+    starCount = 1;
+    showStars ();//命が残っている月アイテムを表示する
   }
 
 
@@ -93,12 +96,17 @@ void game_scene() {
       score = score + block[i];
     }
     scene = 3;
+    playBGM(poseTrack);
   }
 }
 
 //ゲームのスタート画面
 void start_scene() {
   image(start, 0, 0, width, height);
+  
+  //if (currentTrack != poseTrack) {
+  //  playTrack(poseTrack);
+  //}
 }
 
 /*
@@ -107,6 +115,10 @@ void start_scene() {
 */
 
 void result_scene() {
+  //if (currentTrack != poseTrack) {
+  //  playTrack(poseTrack);
+  //}
+  
   if(score >= 0 && score <6){
     image(result5, 0, 0, width, height);
   }
@@ -140,4 +152,7 @@ boolean checkBlockDeleted() {
 
 void explain_scene(){
   image(explain_scene,0,0,width,height);
+  //if (currentTrack != poseTrack) {
+  //  playTrack(poseTrack);
+  //}
 }
