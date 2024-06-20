@@ -86,7 +86,7 @@ float star_x, star_y ; //月の左上の座標
 float star_w = 50, star_h = 50;//月の幅と高さ
 float star_dx,star_dy; //月の移動速度
 
-void showStars () {
+void showStars1 () {
   image(star,star_x,star_y,star_w,star_h);
   }//月アイテムの画像の表示と位置と大きさ
 
@@ -95,7 +95,7 @@ void initStar() {
   star_y = 350;
   star_dx = 0;
   star_dy = 0;
-}//月アイテムの位置と速度を初期化
+}//星アイテムの位置と速度を初期化
 
 float shootingstar_x =width, shootingstar_y = 40; //流れ星の左上の座標
 float shootingstar_w = 50, shootingstar_h = 50;//流れ星の幅と高さ

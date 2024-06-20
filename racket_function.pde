@@ -69,23 +69,25 @@ void checkAndShowRacket(float r_y) {
   if (thunder1Count>0) {
     if (isOverlap(b_x, b_y, b_w, b_h, thunder1_x, thunder1_y, thunder1_w, thunder1_h)) {
       racketLife = racketLife-1;   
-      thunder1Count = thunder1Count-1;
       playDamageEffect();
     }
   }
   if (thunder2Count>0) {
     if (isOverlap(b_x, b_y, b_w, b_h, thunder2_x, thunder2_y, thunder2_w, thunder2_h)) {
       racketLife = racketLife-1;
+      playDamageEffect();
     }
   }
   if (thunder3Count>0) {
     if (isOverlap(b_x, b_y, b_w, b_h, thunder3_x, thunder3_y, thunder3_w, thunder3_h)) {
       racketLife = racketLife-1;
+      playDamageEffect();
     }
   }
   if (thunder4Count>0) {
     if (isOverlap(b_x, b_y, b_w, b_h, thunder4_x, thunder4_y, thunder4_w, thunder4_h)) {
       racketLife = racketLife-1;
+      playDamageEffect();
     }
   }
 
@@ -96,21 +98,24 @@ void checkAndShowRacket(float r_y) {
   if (rainbow1Count>0) {
     if (isOverlap(b_x, b_y, b_w, b_h, rainbow1_x, rainbow1_y, rainbow1_w, rainbow1_h)) {
       racketLife = racketLife+1;
+      playHealEffect();
     }
   }
   if (rainbow2Count>0) {
     if (isOverlap(b_x, b_y, b_w, b_h, rainbow2_x, rainbow2_y, rainbow2_w, rainbow2_h)) {
       racketLife = racketLife+1;
+      playHealEffect();
     }
   }
 
 /*
-月に当たったらランダムで一つのブロックの耐久値を1減らす
+星に当たったらランダムで一つのブロックの耐久値を1減らす
 */
 
-  if (starCount>0) {
+  if (star1Count>0) {
     if (isOverlap(b_x, b_y, b_w, b_h, star_x, star_y, star_w, star_h)) {
-      starCount = starCount - 1;
+      star1Count = star1Count - 1;
+      playStarEffect();
       //image(shootingstar, shootingstar_x, shootingstar_y, shootingstar_w, shootingstar_h);
       //shootingstar_x -= shootingstar_dx;
       //shootingstar_y += shootingstar_dy;

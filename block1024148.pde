@@ -18,11 +18,19 @@ int thunder4Count = 0;//サンダー4の命
 int snowCount = 1;//雪の命
 int rainbow1Count = 0;//虹の命
 int rainbow2Count = 0;//虹の命
-int starCount = 0;//月の命
+int star1Count = 0;//月の命
 int gameTime;//ゲームプレイの時間
 int limitTime;//ゲームの制限時間
 int ballStatus = 0;//ボールの状態
 int scene = 1;//一番初めのシーン
+int cloudCount;
+boolean thunder1Executed = false;
+boolean thunder2Executed = false;
+boolean thunder3Executed = false;
+boolean thunder4Executed = false;
+boolean rainbow1Executed = false;
+boolean rainbow2Executed = false;
+boolean star1Executed = false;
 
 /*
 画像の名前を定義
@@ -40,6 +48,7 @@ PImage snow1;
 PImage sky2;
 PImage sky3;
 PImage sky4;
+PImage sky5;
 PImage snow2;
 PImage teruteru2;
 PImage teruteru3;
@@ -55,7 +64,6 @@ PImage result5;
 PImage explain_scene;
 
 int score = 0;//ゲーム終了時の得点
-
 int racketLife=3; //ラケットの命
 
 int thunderItem[] = new int[1];//雷アイテムの余命カウンター
@@ -91,6 +99,7 @@ void setup() {
   sky2 = loadImage("sky2.png");
   sky3 = loadImage("sky3.png");
   sky4 = loadImage("sky4.png");
+  sky5 = loadImage("sky5.png");
   snow2 = loadImage("snow2.png");
   teruteru2 = loadImage("teru2.png");
   teruteru3 = loadImage("teru3.png");
@@ -111,7 +120,9 @@ void setup() {
   rainTrack = minim.loadFile("rain_music.mp3");
   poseTrack = minim.loadFile("pose_music.mp3");
   damageEffect = minim.loadSample("damage.mp3");
- 
+  healEffect = minim.loadSample("heal.mp3");
+  starEffect = minim.loadSample("star.mp3");
+  
   // 最初のBGMを再生
   playBGM(poseTrack);
   //currentTrack = null;

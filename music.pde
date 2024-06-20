@@ -3,6 +3,8 @@ Minim minim; //Minim型変数であるminimの宣言
 AudioPlayer rainTrack;
 AudioPlayer poseTrack;
 AudioSample damageEffect;
+AudioSample healEffect;
+AudioSample starEffect;
 
 // BGMを再生する関数
 void playBGM(AudioPlayer newBGM) {
@@ -24,6 +26,8 @@ void stop() {
   rainTrack.close();
   poseTrack.close();
   damageEffect.close();
+  healEffect.close();
+  starEffect.close();
   minim.stop();
   super.stop();
 }
@@ -33,8 +37,13 @@ void playDamageEffect() {
   damageEffect.trigger();
 }
 
+void playHealEffect(){
+  healEffect.trigger();
+}
 
-
+void playStarEffect(){
+  starEffect.trigger();
+}
 //void playSoundEffect() {
 //  soundEffect.rewind();
 //  soundEffect.play();
