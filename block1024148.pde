@@ -31,11 +31,13 @@ boolean thunder4Executed = false;
 boolean rainbow1Executed = false;
 boolean rainbow2Executed = false;
 boolean star1Executed = false;
+int teruCloths = 1;//てるてるぼうずの初期衣装
+
 
 /*
 画像の名前を定義
 */
-PImage teruteru1;
+PImage teru1_1;
 PImage cloud3;
 PImage cloud2;
 PImage cloud1;
@@ -50,9 +52,9 @@ PImage sky3;
 PImage sky4;
 PImage sky5;
 PImage snow2;
-PImage teruteru2;
-PImage teruteru3;
-PImage teruteru4;
+PImage teru1_2;
+PImage teru1_3;
+PImage teru1_4;
 PImage star;
 PImage shootingstar;
 PImage start;
@@ -62,6 +64,25 @@ PImage result3;
 PImage result4;
 PImage result5;
 PImage explain_scene;
+PImage cloths_scene;
+PImage teru2_1;
+PImage teru2_2;
+PImage teru2_3;
+PImage teru2_4;
+PImage teru3_1;
+PImage teru3_2;
+PImage teru3_3;
+PImage teru3_4;
+PImage teru4_1;
+PImage teru4_2;
+PImage teru4_3;
+PImage teru4_4;
+PImage teru5_1;
+PImage teru5_2;
+PImage teru5_3;
+PImage teru5_4;
+
+
 
 int score = 0;//ゲーム終了時の得点
 int racketLife=3; //ラケットの命
@@ -86,7 +107,7 @@ void setup() {
   initStar();//星アイテムの初期化
   
   //画像の読み込み
-  teruteru1 = loadImage("teruteru.png");
+  teru1_1 =loadImage("teru1-1.png");
   cloud3 = loadImage("cloud3.png");
   cloud2 = loadImage("cloud2.png");
   cloud1 = loadImage("cloud1.png");
@@ -101,19 +122,36 @@ void setup() {
   sky4 = loadImage("sky4.png");
   sky5 = loadImage("sky5.png");
   snow2 = loadImage("snow2.png");
-  teruteru2 = loadImage("teru2.png");
-  teruteru3 = loadImage("teru3.png");
-  teruteru4 = loadImage("blackteruteru.png");
+  teru1_2 = loadImage("teru1-2.png");
+  teru1_3 = loadImage("teru1-3.png");
+  teru1_4 = loadImage("teru1-4.png");
   star = loadImage("star.png");
   shootingstar = loadImage("shootingstar.png");
   start = loadImage("start_scene.png");
   explain_scene = loadImage("ex_scene.png");
+  cloths_scene = loadImage("cloths_scene.png");
   result1 = loadImage("result1.png");
   result2 = loadImage("result2.png");
   result3 = loadImage("result3.png");
   result4 = loadImage("result4.png");
   result5 = loadImage("result5.png");
-  
+  teru2_1 = loadImage("teru2-1.png");
+  teru2_2 = loadImage("teru2-2.png");
+  teru2_3 = loadImage("teru2-3.png");
+  teru2_4 = loadImage("teru2-4.png");
+  teru3_1 = loadImage("teru3-1.png");
+  teru3_2 = loadImage("teru3-2.png");
+  teru3_3 = loadImage("teru3-3.png");
+  teru3_4 = loadImage("teru3-4.png");
+  teru4_1 = loadImage("teru4-1.png");
+  teru4_2 = loadImage("teru4-2.png");
+  teru4_3 = loadImage("teru4-3.png");
+  teru4_4 = loadImage("teru4-4.png");
+  teru5_1 = loadImage("teru5-1.png");
+  teru5_2 = loadImage("teru5-2.png");
+  teru5_3 = loadImage("teru5-3.png");
+  teru5_4 = loadImage("teru5-4.png");
+    
   
   minim = new Minim(this);
   //BGMファイルをロード
@@ -148,6 +186,9 @@ void draw() {
     break;
     case 4:
     explain_scene();
+    break;
+    case 5:
+    cloths_scene();
     break;
   }
 }

@@ -23,29 +23,28 @@ void game_scene() {
 
 
 /*
-時間が経過するにつれて外形の画像が変更
 だんだんと天気が良い画像に切り替わる
 */  
   if (cloudCount >= 0 && cloudCount < 6) {
-    image(sky4, 0, 0, width, height);//初期の背景画像
-    rainTrack.setGain(-0);
+    image(sky4, 0, 0, width, height);//五段階目の背景画像
+    rainTrack.setGain(-40);
   }
   if (cloudCount >= 6 && cloudCount < 12) {
-    image(sky5, 0, 0, width, height);//二段階目の背景画
-    rainTrack.setGain(-30);
+    image(sky5, 0, 0, width, height);//四段階目の背景画
+    rainTrack.setGain(-21);
   }
   if (cloudCount >= 12 && cloudCount < 18) {
-    image(sky3, 0, 0, width, height);//二段階目の背景画
-    rainTrack.setGain(-20);
+    image(sky3, 0, 0, width, height);//三段階目の背景画
+    rainTrack.setGain(-14);
   }
 
   if (cloudCount >= 18 && cloudCount < 24) {
-    image(sky2, 0, 0, width, height);///三段階目の背景画像
-    rainTrack.setGain(-10);
+    image(sky2, 0, 0, width, height);///二段階目の背景画像
+    rainTrack.setGain(-7);
   }
 
   if (cloudCount >= 24) {
-    image(sky1, 0, 0, width, height);//四段階目の背景画像
+    image(sky1, 0, 0, width, height);//初期の背景画像
   }
 
 
@@ -145,8 +144,27 @@ void game_scene() {
   }
 
   checkAndShowRacket(height-80); // ラケットの表示とボールの打ち返し処理
-  showRacket();//ラケットの表示
-
+  
+  if(teruCloths==1){
+  showRacket1();//ラケットの表示
+  }
+  
+    if(teruCloths==2){
+  showRacket2();//ラケットの表示
+  }
+  
+    if(teruCloths==3){
+  showRacket3();//ラケットの表示
+  }
+  
+    if(teruCloths==4){
+  showRacket4();//ラケットの表示
+  }
+  
+    if(teruCloths==5){
+  showRacket5();//ラケットの表示
+  }
+  
 /*
 30秒のカウントダウンタイマーの表示
 */
@@ -225,4 +243,8 @@ void explain_scene(){
   //if (currentTrack != poseTrack) {
   //  playTrack(poseTrack);
   //}
+}
+
+void cloths_scene(){
+  image(cloths_scene,0,0,width,height);
 }

@@ -21,6 +21,11 @@ void keyPressed() {
       b_dx = 0;
       b_dy = -50;
     }
+    if (keyCode == SHIFT){
+      if(scene==1){
+      scene=5;
+      }
+    }
   }
   if (key == ENTER || key == RETURN) {//enterキーが押されたとき
     if (scene==1) {//スタート画面からゲーム画面に切り替える、ゲームの開始時間を定義する
@@ -43,6 +48,36 @@ void keyPressed() {
   if(key == TAB){
     if(scene==1){//スタート画面から説明画面に切り替える
       scene=4;
+    }
+  }
+  if(key == '1'){
+    if(scene==5){
+      scene=1;
+      teruCloths=1;
+    }
+  }
+  if(key == '2'){
+    if(scene==5){
+      scene=1;
+      teruCloths=2;
+    }
+  }
+  if(key == '3'){
+    if(scene==5){
+      scene=1;
+      teruCloths=3;
+    }
+  }
+  if(key == '4'){
+    if(scene==5){
+      scene=1;
+      teruCloths=4;
+    }
+  }
+  if(key == '5'){
+    if(scene==5){
+      scene=1;
+      teruCloths=5;
     }
   }
 }
@@ -139,16 +174,72 @@ void checkAndShowRacket(float r_y) {
 /*
 ラケットの耐久値により表示するラケットの画像を変える
 */
-void showRacket() {
+void showRacket1() {
   if (racketLife>=3) {
     racketLife = 3;
-    image(teruteru1, r_x +20, height-155, r_w, r_h);
+    image(teru1_1, r_x +20, height-155, r_w, r_h);
   } else if (racketLife==2) {
-    image(teruteru2, r_x+20, height-155, r_w, r_h);
+    image(teru1_2, r_x+20, height-155, r_w, r_h);
   } else if (racketLife==1) {
-    image(teruteru3, r_x +20, height-155, r_w, r_h);
+    image(teru1_3, r_x +20, height-155, r_w, r_h);
   } else if (racketLife<=0) {
-    image(teruteru4, r_x +20, height-155, r_w, r_h);
+    image(teru1_4, r_x +20, height-155, r_w, r_h);
+    racketLife = 0;
+  }
+}
+
+void showRacket2() {
+  if (racketLife>=3) {
+    racketLife = 3;
+    image(teru2_1, r_x +20, height-155, r_w, r_h);
+  } else if (racketLife==2) {
+    image(teru2_2, r_x+20, height-155, r_w, r_h);
+  } else if (racketLife==1) {
+    image(teru2_3, r_x +20, height-155, r_w, r_h);
+  } else if (racketLife<=0) {
+    image(teru2_4, r_x +20, height-155, r_w, r_h);
+    racketLife = 0;
+  }
+}
+
+void showRacket3() {
+  if (racketLife>=3) {
+    racketLife = 3;
+    image(teru3_1, r_x +20, height-155, r_w, r_h);
+  } else if (racketLife==2) {
+    image(teru3_2, r_x+20, height-155, r_w, r_h);
+  } else if (racketLife==1) {
+    image(teru3_3, r_x +20, height-155, r_w, r_h);
+  } else if (racketLife<=0) {
+    image(teru3_4, r_x +20, height-155, r_w, r_h);
+    racketLife = 0;
+  }
+}
+
+void showRacket4() {
+  if (racketLife>=3) {
+    racketLife = 3;
+    image(teru4_1, r_x +20, height-155, r_w, r_h);
+  } else if (racketLife==2) {
+    image(teru4_2, r_x+20, height-155, r_w, r_h);
+  } else if (racketLife==1) {
+    image(teru4_3, r_x +20, height-155, r_w, r_h);
+  } else if (racketLife<=0) {
+    image(teru4_4, r_x +20, height-155, r_w, r_h);
+    racketLife = 0;
+  }
+}
+
+void showRacket5() {
+  if (racketLife>=3) {
+    racketLife = 3;
+    image(teru5_1, r_x +20, height-155, r_w, r_h);
+  } else if (racketLife==2) {
+    image(teru5_2, r_x+20, height-155, r_w, r_h);
+  } else if (racketLife==1) {
+    image(teru5_3, r_x +20, height-155, r_w, r_h);
+  } else if (racketLife<=0) {
+    image(teru5_4, r_x +20, height-155, r_w, r_h);
     racketLife = 0;
   }
 }
